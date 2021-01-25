@@ -19,9 +19,8 @@ class User extends ResourceController{
 
         $this->model->insert($input);
         $response = [
-            "message" => "user created successfully"
+            'message' => 'user created successfully'
         ];
-        echo $response;
         return $this->respondCreated($response);
     }
 

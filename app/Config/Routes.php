@@ -33,16 +33,16 @@ $routes->setAutoRoute(true);
 
 // $routes->get('/users/(:num)', 'User::getUser/$1');
 
-$routes->get('/users', 'User::getAllUsers');
-$routes->get('/users/(:num)', 'User::getUser/$1');
-$routes->post('/users', 'User::createUser');
-$routes->put('/users/(:num)', 'User::updateUser/$1');
-$routes->delete('/users/(:num)', 'User::deleteUser/$1');
 
-// $routes->group('user', function($routes){
+
+$routes->group('users', function($routes){
 	
-
-// });
+	$routes->get('/', 'User::getAllUsers');
+	$routes->get('(:num)', 'User::getUser/$1');
+	$routes->post('/', 'User::createUser');
+	$routes->put('(:num)', 'User::updateUser/$1');
+	$routes->delete('(:num)', 'User::deleteUser/$1');
+});
 
 
 
